@@ -1,0 +1,26 @@
+// Бургер-меню
+document.getElementById('burgerMenu').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.navbar').classList.toggle('active');
+});
+
+// Выпадающее меню при наведении (для десктопа)
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+        dropdown.querySelector('.dropdown-menu').style.display = 'block';
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        dropdown.querySelector('.dropdown-menu').style.display = 'none';
+    });
+});
+
+// Адаптивное закрытие меню при клике вне его
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar') && !e.target.closest('.burger-menu')) {
+        document.querySelector('.navbar').classList.remove('active');
+        document.getElementById('burgerMenu').classList.remove('active');
+    }
+});

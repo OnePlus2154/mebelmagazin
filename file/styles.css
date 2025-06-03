@@ -1,0 +1,399 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Кнопки */
+.btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+/* Шапка */
+.header {
+    background-color: #000;
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 28px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #ff0000;
+}
+
+/* Меню */
+.navbar .menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu-item {
+    margin-left: 30px;
+    position: relative;
+}
+
+.menu-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+}
+
+.menu-item a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.menu-item a:hover:after {
+    width: 100%;
+}
+
+/* Выпадающее меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #111;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    width: 220px;
+    z-index: 10;
+    border-top: 2px solid #ff0000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* Баннер */
+.banner {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.banner h2 {
+    font-size: 48px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.banner h2 span {
+    color: #ff0000;
+}
+
+/* Хиты продаж */
+.hits {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+.hits h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+}
+
+.hits h3:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: #ff0000;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #000;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255,0,0,0.2);
+}
+
+.product-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+.product-info h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.product-info p {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.price:before {
+    content: '₽';
+    color: #ff0000;
+    margin-right: 5px;
+}
+
+/* Популярные категории */
+.categories {
+    padding: 80px 0;
+    background-color: #000;
+}
+
+.categories h3 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+}
+
+.categories h3:after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: #ff0000;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #111;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.category-card:hover {
+    background-color: #ff0000;
+    transform: translateY(-5px);
+}
+
+.category-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ff0000;
+}
+
+.category-card:hover .category-icon {
+    color: #fff;
+}
+
+/* Подвал */
+.footer {
+    background-color: #000;
+    padding: 60px 0 30px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.footer-section h4:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: #ff0000;
+    bottom: -10px;
+    left: 0;
+}
+
+.footer-section p {
+    color: #aaa;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.footer-section i {
+    color: #ff0000;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #333;
+    color: #777;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        padding: 20px;
+        border-bottom: 2px solid #ff0000;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        margin: 15px 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        margin-top: 10px;
+    }
+
+    .banner h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 576px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
